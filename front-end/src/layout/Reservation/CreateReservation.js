@@ -180,7 +180,7 @@ function CreateReservation({ today, updateDate }) {
             >
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary rounded-pill m-1">
+            <button type="submit" className="btn btn-primary rounded-pill m-1 background-color: #8064A2 !important">
               Submit
             </button>
           </div>

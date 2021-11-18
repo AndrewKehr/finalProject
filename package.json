@@ -50,5 +50,8 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "knex": "^0.95.14"
   }
 }
