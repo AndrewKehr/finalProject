@@ -1,4 +1,3 @@
-const { table } = require("../db/connection");
 const knex = require("../db/connection");
 const tableName = "reservations";
 
