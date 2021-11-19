@@ -9,7 +9,7 @@ import SeatReservation from "../layout/Reservation/SeatReservation";
  */
 function DashboardAllReservations({ reservations, reservationsError }) {
   return (
-    <main className="br-2">
+    <main className="border-right">
       <div className="mb-3 container-fluid">
         <h4 className="mb-0 text-center">All Booked Or Seated Reservations</h4>
       </div>

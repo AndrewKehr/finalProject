@@ -41,7 +41,7 @@ function DashboardTable({
   }
 
   return (
-    <main className="bl-2">
+    <main className="border-left">
       <div className="mb-3 container-fluid">
         <h4 className="mb-0 text-center">Tables</h4>
       </div>
