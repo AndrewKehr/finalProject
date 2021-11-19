@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: #393a44;
+  background-color: #335c67;
   min-width: 250px;
 }
 h1 {
@@ -44,14 +44,14 @@ form {
 }
 .reservation-date {
   text-align: center;
-  background-color: azure;
+  background-color: #fff3b0;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .reservation-all {
   text-align: center;
   min-width: 300px;
-  background-color: azure;
+  background-color: #fff3b0;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
 .table {
@@ -61,7 +61,7 @@ form {
   max-width: 200px;
   height: 200px;
   max-height: 200px;
-  background-color: azure;
+  background-color: #fff3b0;
   margin: 2%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
 }
