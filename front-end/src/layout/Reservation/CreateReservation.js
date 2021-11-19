@@ -147,6 +147,8 @@ function CreateReservation({ today, updateDate }) {
             <br />
             <input
               type="time"
+              step="900"
+              value="12:00"
               id="reservation_time"
               name="reservation_time"
               required

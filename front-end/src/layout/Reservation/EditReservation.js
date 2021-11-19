@@ -203,6 +203,8 @@ function EditReservation({ today, updateDate }) {
               type="time"
               id="reservation_time"
               name="reservation_time"
+              step="900"
+              value="12:00"
               required
               value={formData.reservation_time}
               onChange={handleChange}
@@ -233,7 +235,7 @@ function EditReservation({ today, updateDate }) {
               onClick={handleCancel}
               className="btn btn-secondary m-1"
             >
-              Cancel (Fix this button)
+              Cancel
             </button>
             <button type="submit" className="btn btn-primary m-1">
               Submit
