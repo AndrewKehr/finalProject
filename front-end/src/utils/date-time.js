@@ -61,15 +61,16 @@ export function checkInPast(currentDate) {
     throw new Error("Date is in the past.");
   }
 }
+
 export function checkTuesday(currentDate) {
   let [year, month, day] = currentDate.split("-");
   month -= 1;
   const tuesdayDate = new Date(year, month, day);
-
   if (tuesdayDate.getDay() === 2) {
     throw new Error("Restaurant is closed on Tuesdays.");
   }
 }
+
 export function checkTime(time) {
   let [hour, minute] = time.split(":");
 

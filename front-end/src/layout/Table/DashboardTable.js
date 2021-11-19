@@ -71,7 +71,7 @@ function DashboardTable({
               {table.occupied ? `Res. #${table.reservation_id}` : null}
             </p>
             <button
-              className="btn btn-outline-primary bg-white rounded-pill "
+              className="btn btn-outline-primary bg-white"
               onClick={finishClick}
               value={[table.table_id, table.reservation_id]}
               data-table-id-finish={table.table_id}

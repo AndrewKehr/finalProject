@@ -12,7 +12,7 @@ import { createTable } from "../../utils/api";
 function CreateTable(loadTables, loadAllReservations, loadDashboard) {
   const initialFormState = {
     table_name: "",
-    capacity: 0,
+    capacity: "",
   };
   const [formData, setFormData] = useState({ ...initialFormState });
   const [tablesError, setTablesError] = useState(null);
@@ -78,17 +78,20 @@ function CreateTable(loadTables, loadAllReservations, loadDashboard) {
               onChange={handleChange}
               className="w-100"
               min="1"
+              placeholder="Seating Capacity"
+              max="20"
+              min="1"
             />
           </label>
           <div className="container">
             <button
               type="button"
               onClick={handleCancel}
-              className="btn btn-secondary m-1 rounded-pill"
+              className="btn btn-secondary m-1"
             >
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary m-1 rounded-pill">
+            <button type="submit" className="btn btn-primary m-1">
               Submit
             </button>
           </div>

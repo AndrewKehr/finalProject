@@ -36,21 +36,21 @@ function SeatReservation({ reservation }) {
       <div className="d-flex justify-content-around ">
         <a
           href={`/reservations/${reservation.reservation_id}/seat`}
-          className="btn btn-primary m-1 rounded-pill "
+          className="btn btn-primary m-1"
           hidden={!(reservation.status === "booked")}
         >
           Seat
         </a>
         <a
           href={`/reservations/${reservation.reservation_id}/edit`}
-          className="btn btn-secondary m-1 rounded-pill "
+          className="btn btn-secondary m-1"
           hidden={!(reservation.status === "booked")}
         >
           Edit
         </a>
         <button
           onClick={handleCancle}
-          className="btn btn-outline-danger bg-white m-1 rounded-pill "
+          className="btn btn-outline-danger bg-white m-1"
           value={reservation.reservation_id}
           data-reservation-id-cancel={reservation.reservation_id}
           hidden={reservation.status === "cancelled"}

@@ -19,21 +19,21 @@ function DashboardDate({ date, updateDate }) {
   return (
     <div className="d-flex row justify-content-center">
       <button
-        className=" btn btn-outline-primary m-3 px-5 rounded-pill"
+        className=" btn btn-outline-primary m-3 px-5"
         onClick={handlePastDay}
       >
         Past Day <br />
         &#8592;
       </button>
       <button
-        className=" btn btn-outline-primary m-3 px-5 rounded-pill"
+        className=" btn btn-outline-primary m-3 px-5"
         onClick={handleNextDay}
       >
         Next Day <br />
         &#8594;
       </button>
       <button
-        className=" btn btn-primary m-3 px-5 rounded-pill"
+        className=" btn btn-primary m-3 px-5"
         onClick={handleToday}
         disabled={date === today()}
       >

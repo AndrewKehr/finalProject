@@ -24,7 +24,7 @@ function CreateReservation({ today, updateDate }) {
     mobile_number: "",
     reservation_date: "",
     reservation_time: "",
-    people: 0,
+    people: "",
   };
 
   const [formData, setFormData] = useState({ ...initialFormState });
@@ -176,11 +176,11 @@ function CreateReservation({ today, updateDate }) {
             <button
               type="button"
               onClick={handleCancel}
-              className="btn btn-secondary rounded-pill m-1"
+              className="btn btn-secondary m-1"
             >
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary rounded-pill m-1 background-color: #8064A2 !important">
+            <button type="submit" className="btn btn-primary m-1">
               Submit
             </button>
           </div>
