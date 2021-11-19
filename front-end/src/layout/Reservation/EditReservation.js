@@ -233,7 +233,7 @@ function EditReservation({ today, updateDate }) {
               onClick={handleCancel}
               className="btn btn-secondary m-1"
             >
-              Cancel
+              Cancel (Fix this button)
             </button>
             <button type="submit" className="btn btn-primary m-1">
               Submit
