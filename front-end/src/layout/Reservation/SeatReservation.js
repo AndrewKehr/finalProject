@@ -1,5 +1,6 @@
 import React from "react";
 import { reservationStatusUpdate } from "../../utils/api";
+import { today } from "../../utils/date-time";
 
 function SeatReservation({ reservation }) {
   async function handleCancel(event) {
@@ -37,7 +38,7 @@ function SeatReservation({ reservation }) {
         <a
           href={`/reservations/${reservation.reservation_id}/seat`}
           className="btn btn-primary m-1"
-          hidden={!(reservation.status === "booked")}
+          hidden={!(reservation.status === "booked") || reservation.reservation_date !== today()}
         >
           Seat
         </a>
