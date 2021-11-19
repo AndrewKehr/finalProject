@@ -25,15 +25,9 @@ function DashboardTable({
       const reservationTableIds = event.target.value.split(",");
 
       Promise.all([
-        // reservationStatusUpdate(
-        //   reservationTableIds[1], //reservation_id
-        //   "finished",
-        //   abortController.signal
-        // ),
-
         finishTable(
-          reservationTableIds[0], //table_id
-          reservationTableIds[1], //reservation_id
+          reservationTableIds[0],
+          reservationTableIds[1],
           abortController.signal
         ),
       ])
@@ -41,10 +35,8 @@ function DashboardTable({
         .then(loadAllReservations)
         .then(loadDashboard)
         .catch(setTablesError);
-
       return () => abortController.abort();
     } else {
-      //do nothing
     }
   }
 
@@ -70,7 +62,7 @@ function DashboardTable({
             <p className="text-center">
               {table.occupied ? `Res. #${table.reservation_id}` : null}
             </p>
-             {table.occupied ? <button
+            {table.occupied ? <button
               className="btn btn-outline-primary bg-white"
               onClick={finishClick}
               value={[table.table_id, table.reservation_id]}

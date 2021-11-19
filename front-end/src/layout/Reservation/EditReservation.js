@@ -110,7 +110,7 @@ function EditReservation({ today, updateDate }) {
         checkTodayTime(formData.reservation_time);
       const abortController = new AbortController();
       await updateReservation(formData, abortController.signal);
-     
+
       await updateDate(formData.reservation_date);
       history.push("/dashboard");
     } catch (error) {
@@ -167,10 +167,8 @@ function EditReservation({ today, updateDate }) {
               type="tel"
               id="mobile_number"
               name="mobile_number"
-              // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
-              // minLength="10"
-              maxLength="15"
+              maxLength="10"
               value={formData.mobile_number}
               onChange={handleChange}
               className="w-100"
@@ -191,8 +189,6 @@ function EditReservation({ today, updateDate }) {
               value={formData.reservation_date}
               onChange={handleChange}
               className="w-100"
-              min="2018-01-01"
-              max="2050-12-31"
             />
           </label>
           <br />
@@ -203,8 +199,6 @@ function EditReservation({ today, updateDate }) {
               type="time"
               id="reservation_time"
               name="reservation_time"
-              step="900"
-              value="12:00"
               required
               value={formData.reservation_time}
               onChange={handleChange}

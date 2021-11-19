@@ -30,7 +30,7 @@ function SearchReservation() {
     });
   };
 
-  async function handleSubmit(event) {
+  async function handleSearch(event) {
     setReservationsError(null);
     event.preventDefault();
     try {
@@ -52,17 +52,14 @@ function SearchReservation() {
     }
   }
 
-  const handleCancel = (event) => {
-    event.preventDefault();
-    history.goBack();
-  };
-
   return (
     <main className="container-fluid m-auto ">
       <h1>Search Reservations</h1>
-      <div className="d-md-flex mb-3 container-fluid 
-      ">
-        <form onSubmit={handleSubmit} className="column">
+      <div
+        className="d-md-flex mb-3 container-fluid 
+      "
+      >
+        <form className="column">
           <label>
             Enter Mobile Number
             <br />
@@ -71,9 +68,9 @@ function SearchReservation() {
               id="mobile_number"
               name="mobile_number"
               required
-              onKeyUp={handleSubmit}
+              onKeyUp={handleSearch}
               minLength="1"
-              maxLength="15"
+              maxLength="10"
               value={formData.mobile_number}
               onChange={handleChange}
               className="w-100"

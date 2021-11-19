@@ -111,7 +111,7 @@ function SeatTable() {
               defaultValue=""
             >
               <option value="" disabled>
-                --Select Free Table w/ Right Capacity--
+                --Select Table--
               </option>
               {listOfTableNames}
             </select>

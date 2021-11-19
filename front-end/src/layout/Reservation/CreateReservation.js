@@ -137,8 +137,6 @@ function CreateReservation({ today, updateDate }) {
               value={formData.reservation_date}
               onChange={handleChange}
               className="w-100"
-              min="2018-01-01"
-              max="2040-12-31"
             />
           </label>
           <br />
@@ -147,8 +145,6 @@ function CreateReservation({ today, updateDate }) {
             <br />
             <input
               type="time"
-              step="900"
-              value="12:00"
               id="reservation_time"
               name="reservation_time"
               required
