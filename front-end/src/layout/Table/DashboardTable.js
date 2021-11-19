@@ -23,7 +23,7 @@ function DashboardTable({
     ) {
       const abortController = new AbortController();
       const reservationTableIds = event.target.value.split(",");
-      
+
       Promise.all([
         // reservationStatusUpdate(
         //   reservationTableIds[1], //reservation_id
@@ -50,14 +50,14 @@ function DashboardTable({
 
   return (
     <main>
-      <div className="mb-3 container-fluid ">
-        <h4 className="mb-0 text-center ">Tables</h4>
+      <div className="mb-3 container-fluid">
+        <h4 className="mb-0 text-center">Tables</h4>
       </div>
       <ErrorAlert error={tablesError} />
       <div className="d-flex flex-wrap container-fluid justify-content-center">
         {tables.map((table) => (
           <div
-            className=" border  border-secondary d-flex flex-column p-3 col table text-center"
+            className="border border-secondary d-flex flex-column p-3 col table text-center"
             key={table.table_id}
           >
             <h4 className="mb-0 pt-3">
@@ -65,21 +65,20 @@ function DashboardTable({
             </h4>
 
             <p data-table-id-status={table.table_id} className="occupied ">
-              {table.occupied ? "Occupied" : "Free"}
+              {table.occupied ? "In Use" : "Available"}
             </p>
             <p className="text-center">
               {table.occupied ? `Res. #${table.reservation_id}` : null}
             </p>
-            <button
+             {table.occupied ? <button
               className="btn btn-outline-primary bg-white"
               onClick={finishClick}
               value={[table.table_id, table.reservation_id]}
               data-table-id-finish={table.table_id}
               data-reservation-id-status={table.reservation_id}
-              disabled={!table.occupied}
             >
               Finish
-            </button>
+            </button> : null}
           </div>
         ))}
       </div>

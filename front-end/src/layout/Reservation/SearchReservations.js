@@ -84,11 +84,11 @@ function SearchReservation() {
             <button
               type="button"
               onClick={handleCancel}
-              className="btn btn-secondary m-1 rounded-pill"
+              className="btn btn-secondary m-1"
             >
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary rounded-pill m-1">
+            <button type="submit" className="btn btn-primary m-1">
               Find
             </button>
           </div>

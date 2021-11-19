@@ -50,7 +50,7 @@ function SeatReservation({ reservation }) {
         </a>
         <button
           onClick={handleCancle}
-          className="btn btn-outline-danger bg-white m-1"
+          className="btn btn-warning bg-white m-1"
           value={reservation.reservation_id}
           data-reservation-id-cancel={reservation.reservation_id}
           hidden={reservation.status === "cancelled"}
