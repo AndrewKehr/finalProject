@@ -113,10 +113,9 @@ function CreateReservation({ today, updateDate }) {
               type="tel"
               id="mobile_number"
               name="mobile_number"
-              // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
-              // minLength="10"
-              maxLength="15"
+              maxLength="10"
+              minLength="10"
               value={formData.mobile_number}
               onChange={handleChange}
               className="w-100"

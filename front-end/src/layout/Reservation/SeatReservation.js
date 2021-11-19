@@ -2,7 +2,7 @@ import React from "react";
 import { reservationStatusUpdate } from "../../utils/api";
 
 function SeatReservation({ reservation }) {
-  async function handleCancle(event) {
+  async function handleCancel(event) {
     if (
       window.confirm(
         "Do you want to cancel this reservation? This cannot be undone."
@@ -17,7 +17,6 @@ function SeatReservation({ reservation }) {
       window.location.reload();
       return () => abortController.abort();
     } else {
-      //do nothing
     }
   }
   return (
@@ -34,6 +33,7 @@ function SeatReservation({ reservation }) {
         Status: {reservation.status}
       </p>
       <div className="d-flex justify-content-around ">
+        
         <a
           href={`/reservations/${reservation.reservation_id}/seat`}
           className="btn btn-primary m-1"
@@ -41,6 +41,7 @@ function SeatReservation({ reservation }) {
         >
           Seat
         </a>
+
         <a
           href={`/reservations/${reservation.reservation_id}/edit`}
           className="btn btn-secondary m-1"
@@ -48,15 +49,17 @@ function SeatReservation({ reservation }) {
         >
           Edit
         </a>
+        
         <button
-          onClick={handleCancle}
+          onClick={handleCancel}
           className="btn btn-warning bg-white m-1"
           value={reservation.reservation_id}
           data-reservation-id-cancel={reservation.reservation_id}
-          hidden={reservation.status === "cancelled" || "finished"}
+          hidden={!reservation.status === "booked" || "seated"}
         >
           Cancel
         </button>
+
       </div>
     </div>
   );

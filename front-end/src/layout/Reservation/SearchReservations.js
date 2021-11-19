@@ -55,10 +55,7 @@ function SearchReservation() {
   return (
     <main className="container-fluid m-auto ">
       <h1>Search Reservations</h1>
-      <div
-        className="d-md-flex mb-3 container-fluid 
-      "
-      >
+      <div className="d-md-flex mb-3 container-fluid">
         <form className="column">
           <label>
             Enter Mobile Number

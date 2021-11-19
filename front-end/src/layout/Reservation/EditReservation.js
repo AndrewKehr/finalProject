@@ -169,6 +169,7 @@ function EditReservation({ today, updateDate }) {
               name="mobile_number"
               required
               maxLength="10"
+              minLength="10"
               value={formData.mobile_number}
               onChange={handleChange}
               className="w-100"
