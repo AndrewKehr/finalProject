@@ -71,6 +71,7 @@ function SearchReservation() {
               id="mobile_number"
               name="mobile_number"
               required
+              onKeyUp={handleSubmit}
               minLength="1"
               maxLength="15"
               value={formData.mobile_number}

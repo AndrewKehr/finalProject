@@ -59,7 +59,7 @@ function CreateTable(loadTables, loadAllReservations, loadDashboard) {
               required
               value={formData.table_name}
               onChange={handleChange}
-              className="w-100"
+              className="w-50"
               minLength="2"
               placeholder="Enter Table Name"
             />
@@ -76,9 +76,9 @@ function CreateTable(loadTables, loadAllReservations, loadDashboard) {
               required
               value={formData.capacity}
               onChange={handleChange}
-              className="w-100"
+              className="w-50"
               min="1"
-              placeholder="Seating Capacity"
+              placeholder="Capacity"
               max="20"
               min="1"
             />
