@@ -55,8 +55,7 @@ function SeatReservation({ reservation }) {
           className="btn btn-warning bg-white m-1"
           value={reservation.reservation_id}
           data-reservation-id-cancel={reservation.reservation_id}
-          hidden={reservation.status === "cancelled"}
-          hidden={reservation.status === "finished"}
+          hidden={!reservation.status === "booked"}
         >
           Cancel
         </button>
