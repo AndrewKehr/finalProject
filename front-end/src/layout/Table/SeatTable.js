@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import {
   listTables,
-  seatTable,
+  seatThisTable,
   getPeople,
   reservationStatusUpdate,
 } from "../../utils/api";
@@ -15,6 +15,7 @@ import ErrorAlert from "../ErrorAlert";
  */
 
 function SeatTable() {
+// const [listOfTableNames, setListOfTableNames] = useState([]);
   const [tables, setTables] = useState([]);
   const [tablesError, setTablesError] = useState(null);
   const [people, setPeople] = useState(1);
@@ -32,20 +33,34 @@ function SeatTable() {
 
     getPeople(reservation_id, abortController.signal)
       .then((res) => {
-        setPeople(res[0].people);
-        setStatus(res[0].status);
+        console.log(`this is res`, res)
+        setPeople(res.people);
+        setStatus(res.status);
       })
       .catch(setTablesError);
 
     return () => abortController.abort();
   }, [reservation_id]);
 
-  useEffect(loadTables, []);
+  useEffect(loadTables, [setTables, setTablesError]);
 
   function loadTables() {
     const abortController = new AbortController();
     listTables({ occupied: false }, abortController.signal)
-      .then(setTables)
+      .then(tables => {
+        setTables(tables)
+        // const tableOptions = tables.map((table) => {
+        //   console.log('This is the table variable', table)
+        //   return (
+        //     <option
+        //       value={table.table_id}
+        //       key={table.table_id}
+        //       disabled={table.capacity < people}
+        //     >{table.table_name} - {table.capacity}</option>
+        //   );
+        // });
+        // setListOfTableNames(tableOptions)
+      })
       .catch(setTablesError);
     return () => abortController.abort();
   }
@@ -61,7 +76,7 @@ function SeatTable() {
     event.preventDefault();
     try {
       const abortController = new AbortController();
-      await seatTable(
+      await seatThisTable(
         formData.table_id,
         reservation_id,
         abortController.signal
@@ -88,11 +103,10 @@ function SeatTable() {
         value={table.table_id}
         key={table.table_id}
         disabled={table.capacity < people}
-      >
-        {table.table_name} - {table.capacity}
-      </option>
+      >{table.table_name} - {table.capacity}</option>
     );
   });
+
   return status === "seated" ? null : (
     <main>
       <h1>Assign Seat For Reservation #{reservation_id}</h1>

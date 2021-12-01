@@ -13,6 +13,7 @@ function CreateTable(loadTables, loadAllReservations, loadDashboard) {
   const initialFormState = {
     table_name: "",
     capacity: "",
+    occupied: "",
   };
   const [formData, setFormData] = useState({ ...initialFormState });
   const [tablesError, setTablesError] = useState(null);
@@ -29,7 +30,7 @@ function CreateTable(loadTables, loadAllReservations, loadDashboard) {
     event.preventDefault();
     try {
       const abortController = new AbortController();
-      await createTable(formData, abortController.signal);
+      await createTable({...formData, occupied: false }, abortController.signal);
       await loadTables;
       await loadAllReservations;
       await loadDashboard;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import ErrorAlert from "../../layout/ErrorAlert";
 import { searchReservation } from "../../utils/api";
 import SeatReservation from "./SeatReservation";
@@ -20,7 +19,6 @@ function SearchReservation() {
   const [formData, setFormData] = useState({ ...initialFormState });
   const [reservationsError, setReservationsError] = useState(null);
   const [reservations, setReservations] = useState([]);
-  const history = useHistory();
 
   const handleChange = ({ target }) => {
     setReservationsError(null);
@@ -65,7 +63,6 @@ function SearchReservation() {
               id="mobile_number"
               name="mobile_number"
               required
-              onKeyUp={handleSearch}
               minLength="1"
               maxLength="10"
               value={formData.mobile_number}
@@ -74,6 +71,9 @@ function SearchReservation() {
               placeholder="555-555-1234"
             />
           </label>
+          <button type="submit" onClick={handleSearch} className="btn btn-primary rounded-pill m-1">
+              Find
+            </button>
         </form>
       </div>
       <ErrorAlert error={reservationsError} />

@@ -1,8 +1,10 @@
 async function selectOptionByText(page, name, optionText) {
+  console.log('##############################')
+  console.log('selectOptionByText')
   const optionWaned = (
     await page.$x(`//*[@name = "${name}"]/option[text() = "${optionText}"]`)
   )[0];
-
+console.log(optionWaned)
   const optionValue = await (
     await optionWaned.getProperty("value")
   ).jsonValue();

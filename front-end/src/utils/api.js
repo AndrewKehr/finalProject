@@ -147,7 +147,7 @@ export async function searchReservation(params, signal) {
     .then(formatReservationDate)
     .then(formatReservationTime);
 }
-export async function seatTable(table, reservation_id, signal) {
+export async function seatThisTable(table, reservation_id, signal) {
   const url = `${API_BASE_URL}/tables/${table}/seat`;
   const data = {
     data: { reservation_id: reservation_id },
@@ -161,6 +161,7 @@ export async function seatTable(table, reservation_id, signal) {
   };
   return await fetchJson(url, options);
 }
+
 export async function reservationStatusUpdate(
   reservation_id,
   new_status,
@@ -180,7 +181,7 @@ export async function reservationStatusUpdate(
 }
 
 export async function getPeople(reservation_id, signal) {
-  const url = `${API_BASE_URL}/reservations/${reservation_id}/status`;
+  const url = `${API_BASE_URL}/reservations/${reservation_id}`;
 
   const options = {
     method: "GET",

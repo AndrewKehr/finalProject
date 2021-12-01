@@ -57,7 +57,7 @@ function DashboardTable({
             </h4>
 
             <p data-table-id-status={table.table_id} className="occupied ">
-              {table.occupied ? "In Use" : "Available"}
+              {table.occupied ? "Occupied" : "Free"}
             </p>
             <p className="text-center">
               {table.occupied ? `Res. #${table.reservation_id}` : null}
