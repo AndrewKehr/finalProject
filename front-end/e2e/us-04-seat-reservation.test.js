@@ -167,7 +167,7 @@ describe("US-04 - Seat reservation - E2E", () => {
       );
     });
 
-    test.only("seating reservation at table #1 makes the table occupied", async () => {
+    test("seating reservation at table #1 makes the table occupied", async () => {
       console.log('##############################')
   console.log('Whatever, this is what we want')
       
